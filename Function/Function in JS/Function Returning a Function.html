@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Function Returning a Function</title>
+    </head>
+    <body>
+        <script>
+            function greet (message){
+                return function(wishes){
+                    console.log(`${wishes}, ${message}`);
+                }
+            }
+          /*  const greeting = greet('I hope you are doing well!');
+             greeting('Hello'); */
+          //  const greeting = greet('I hope you are doing well!')('Hello');
+         
+          greet('Welcome to the session')('Hi');
+        </script>
+    </body>
+</html>

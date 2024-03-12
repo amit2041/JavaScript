@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Award Egibility</title>
+    </head>
+    <body>
+        <script>
+            function isEligible(mathScore, englishScore, scienceScore) {
+    let eligibleForAward;
+    eligibleForAward = isEligibleForScholarship(englishScore, mathScore, scienceScore) || isEligibleForScienceFair(englishScore, mathScore, scienceScore);
+    return eligibleForAward;
+}
+
+function isEligibleForScholarship(englishScore, mathScore, scienceScore) {
+    return (englishScore > 80 && mathScore > 80) || (englishScore > 80 && scienceScore > 80) || (mathScore > 80 && scienceScore > 80);
+}
+
+function isEligibleForScienceFair(englishScore, mathScore, scienceScore) {
+    return (englishScore + mathScore + scienceScore) >= 250;
+}
+        </script>
+
+    </body>
+</html>

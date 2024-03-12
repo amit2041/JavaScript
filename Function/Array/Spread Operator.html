@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Spread Operator</title>
+    </head>
+    <body>
+        <script>
+            /*** Rest ***/
+            //Add student in given batch , single student add means this is a normal code
+            const aprilBatch = ['Tina', 'Madhur'];
+            const mayBatch = ['Ritik', 'Deepak', 'Shalini'];
+            const juneBatch = ['Saba', 'Shivani'];
+            const julyBatch = ['Kapil', 'Sunil', 'Brijesh'];
+            const augBatch = [];
+
+            const newBatch = [...mayBatch];
+            console.log(newBatch);
+
+            mayBatch.push('newStuden');
+            console.log(mayBatch);
+            console.log(newBatch);
+
+            //concatenate two batch in one Array By using Spread
+            const mergedBatch = [...juneBatch, ...julyBatch];
+            console.log(mergedBatch);
+
+        </script>
+    </body>
+</html>

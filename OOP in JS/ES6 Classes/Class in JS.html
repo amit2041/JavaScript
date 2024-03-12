@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Class in JS</title>
+    </head>
+    <body>
+        <script>
+            class Person {
+                constructor(uName, uAge){
+                    this.name = uName;
+                    this.age = uAge;
+                }
+                details(){
+                    console.log(`The age of ${this.name} is ${this.age} years`);
+                }
+            }
+            // Create Object
+            const p = new Person('Rahul', 25);
+            p.details();
+
+            // Create one another Object
+            console.log('***********************************************************'); // divide border
+            const q = new Person('john', 28);
+            q.details();
+
+        </script>
+    </body>
+</html>

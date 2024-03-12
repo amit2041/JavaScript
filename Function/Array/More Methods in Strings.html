@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>More Methods in Strings</title>
+    </head>
+    <body>
+        <script>
+            /*** More Methods in Strings ***/
+            let str = 'JavaScript is a Dynamically typed language.';
+            // includes()
+            console.log(str.includes('is')); // check 'is' is present or not
+            console.log(str.includes('was'));
+
+            // replace()
+            console.log(str.replace('is', 'are')); // this is replace only first character or word
+
+            // replaceAll()
+            let str2 = 'India is the best country in the world.';
+            console.log(str2);
+            console.log(str2.replaceAll('the', 'full')); // this method replace all 'the' to 'full'
+
+            // trim() ---> this is remove leading and trailing spaces only
+            let str3 = '   JavaScript ia a scripting language.   ';
+            console.log(str3);
+            console.log(str3.trim());
+
+            // split() ---> every word of sentence change to element and put in Array
+            let str4 = 'JavaScript is, event based language.';
+            console.log(str4);
+            console.log(str4.split());
+            console.log(str4.split(' '));
+            console.log(str4.split(','));
+
+            // substring()
+            let str5 = 'JavaScript is a client side language.';
+            console.log(str5);
+            console.log(str5.substring(3));
+            console.log(str5.substring(3, 7));
+            console.log(str5.substring(-4));
+            console.log(str5.substring(-4, -12));
+
+            // slice()
+            console.log(str5);
+            console.log(str5.slice(3));
+            console.log(str5.slice(3, 7));
+            console.log(str5.slice(-4));
+            console.log(str5.slice(-9, -3));
+
+        </script>
+    </body>
+</html>

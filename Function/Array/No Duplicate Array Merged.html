@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>No Duplicate Array</title>
+    </head>
+    <body>
+        <!--
+            //Question
+            You have been provided with two arrays your task is to merge both arrays while removing the duplicate elements from the merged array.
+
+Expected Input
+ arr1= [1,2,3,4,5,6,7]
+ arr2 = [5,6,7,8,9]
+Expected Output
+[1,2,3,4,5,6,7,8,9]
+Note
+The order of the elements should be preserved, i.e., The elements of the final array should be in the same order as they were present in the merging array.
+Test Cases
+Merge arr1 and arr2
+Find all the duplicate elements from the new array and keep the order of the elements the same
+Return the new array
+
+        -->
+        <script>
+            arr1 = [1,2,4,5,7];
+arr2 = [3,4,6,7,9,0];
+function mergeArray(arr1,arr2){
+    // Concatenate both arrays
+    const mergedArray = arr1.concat(arr2);
+
+    // Use a Set to remove duplicate elements while preserving order
+    const uniqueArray = [...new Set(mergedArray)];
+
+    return uniqueArray;
+}
+console.log(mergeArray(arr1,arr2));
+//Output : [1,2,4,5,7,3,6,9,0]
+        </script>
+    </body>
+</html>

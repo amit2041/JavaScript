@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Static Keyword</title>
+    </head>
+    <body>
+        <script>
+            //Static
+            class Vehicle{
+
+                // static property
+                static vName = 'Static Name';
+                //Constructor
+                constructor(name, color, wheels){
+                    this.name = name;
+                    this.color = color;
+                    this.wheels = wheels;
+                }
+                //Methods
+                getDetails(){
+                    console.log(`The ${this.name} is ${this.color} in color. It has ${this.wheels} wheels.`);
+                }
+
+                //Static Method
+                static showMSG(){
+                    console.log('This is the static method of the class.');
+                }
+            }
+
+            const V1 = new Vehicle('Car', 'Blue', 4);
+            console.log(V1);
+            V1.getDetails();
+           // V1.showMSG();
+            Vehicle.showMSG();
+
+            console.log(Vehicle.vName);
+        </script>
+    </body>
+</html>

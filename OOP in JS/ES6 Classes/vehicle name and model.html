@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Vehicle name and models</title>
+    </head>
+    <body>
+        <script>
+            class VehicleCl{
+                //Properties
+                name;
+                color;
+                wheels;
+                //Constructor
+                constructor(name, color, wheels){
+                    this.name = name;
+                    this.color = color;
+                    this.wheels = wheels;
+                }
+
+                // Methods
+                getDetails(){
+                    console.log(`The ${this.name} is ${this.color} in color. It has ${this.wheels} wheels`);
+                }
+
+            }
+
+            // Object
+            const veh1 = new VehicleCl('Scooter', 'grey', 2);
+            console.log(veh1);
+            console.log('/************************************/');
+            veh1.getDetails();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Array Destructing</title>
+    </head>
+    <body>
+        <script>
+            const fruits = ['Apple', 'Mango','Kiwi','Berry','Banana', 'Lichi'];
+            const[a, m] = fruits;
+            console.log(a);
+            console.log(m);
+            console.log(a, m);
+
+            console.log('***********Skip some elements*************');
+            const fruits2 = ['orange', 'papaya', 'pineapple', 'strawberry'];
+            const[o, ,p] = fruits2;
+            console.log(o, p);
+
+            console.log('************************');
+
+            const vegetables = ['potato', 'onion', 'tomato','ginger', 'ladyfinger'];
+            const[po, on, ...[ , gi, la]] = vegetables;
+            console.log(gi, la);
+
+            console.log('************************');
+
+            const dryFruits = ['dates', 'walnuts', 'cashews', 'raisins', 'peanuts'];
+            const[da, wa,...pe] = dryFruits;
+            console.log(pe);
+        </script>
+    </body>
+</html>

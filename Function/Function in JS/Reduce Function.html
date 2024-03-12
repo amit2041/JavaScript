@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Reduce Function</title>
+    </head>
+    <body>
+        <script>
+            // sum of array elements by using Reduce Function
+            const inputs = [2, 3, 4, 5, 6, 10];
+            const sum = inputs.reduce((total, num) =>{
+            return total + num;}, 0);
+            console.log(sum);
+/*
+            // sum of array elements by using Reduce Function, and printing output with index number
+            const inputs2 = [2, 3, 4, 5, 6, 10];
+            const sum2 = inputs.reduce((total, num, index)=>{
+                console.log(total, index);
+                return total + num;
+            }, 0);
+            console.log(sum2);
+
+            /*****  ********
+            const inputs3 = [2, 3, 4, 5, 6, 10];
+            const sum3 = inputs.reduce((total, num, index)=>{
+                console.log(total, index);
+                return total + num;
+            },);
+            console.log(sum3);
+        */
+        </script>
+    </body>
+</html>

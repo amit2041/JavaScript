@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Calculating total price</title>
+    </head>
+    <body>
+        <!--
+            //Question
+            You run a shopping mall and store customer list you use a nested object consisting of different objects. Create a function calculatePrice which should take an object as its parameter. It should be able to calculate the total price after taking price and quantity into account for each product.
+Expected Input
+const goods = {
+apple: { price: 150, quantity: 2 },
+banana: { price: 75, quantity: 3 },
+orange: { price: 125, quantity: 1 }
+}
+Expected Output
+650
+
+        -->
+        <script>
+            const goods = {
+    apple: { price: 150, quantity: 2 },
+    banana: { price: 75, quantity: 3 },
+    orange: { price: 125, quantity: 1 }
+    };    
+    function calculatePrice(goods){
+         let totalPrice = 0;
+
+    // Iterate over each item in the goods object
+    for (let item in goods) {
+        if (goods.hasOwnProperty(item)) {
+            // Get the price and quantity of the item
+            const price = goods[item].price;
+            const quantity = goods[item].quantity;
+
+            // Calculate the total price for the item and add it to the total price
+            totalPrice += price * quantity;
+        }
+    }
+
+    // Return the total price
+    return totalPrice;
+}
+
+console.log(calculatePrice(goods)); 
+// Output: 650
+        </script>
+    </body>
+</html>

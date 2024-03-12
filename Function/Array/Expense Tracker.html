@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Expense Tracker</title>
+    </head>
+    <body>
+        <!--
+            //Question
+            You're building a basic expense tracker program. The idea is to add new expenses, provided as a number, to the existing array of expenses. After doing this, the program should give you the updated array.
+
+Expected Input
+[340 , 567 , 434 , 653]
+newExpense = 543
+Expected Output
+ [340 , 567 , 434 , 653 , 543]
+Test Cases
+ You should add a new expense to the existing array
+h
+
+        -->
+        <script>
+            function addExpense(newExpense , originalExpenseArray) {
+            originalExpenseArray.push(newExpense);
+            return originalExpenseArray;
+}
+        // Test case
+const originalExpenseArray = [340, 567, 434, 653];
+const newExpense = 543;
+const updatedExpenses = addExpense(newExpense, originalExpenseArray);
+console.log(updatedExpenses);
+        </script>
+    </body>
+</html>

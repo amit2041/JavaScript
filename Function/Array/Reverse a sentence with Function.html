@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Reverse a String with Function</title>
+    </head>
+    <body>
+        <script>
+            function reverseStr(str){
+                const strArray = str.split(' ');
+                //console.log(strArray);
+                strArray.reverse();
+                return strArray.join(' ');
+            }
+            const string = reverseStr("hello");
+            console.log(string);
+        </script>
+    </body>
+</html>

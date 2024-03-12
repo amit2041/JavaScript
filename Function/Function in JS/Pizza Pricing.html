@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Pizza Pricing</title>
+    </head>
+    <body>
+        <!--
+            //Question
+            You are tasked with creating a program to calculate the price of a pizza based on its size, quantity and selected toppings.
+
+
+
+Objectives
+The pricing is determined as follows:
+- The base price of the pizza depends on its size, which can be small, medium, or large.
+Small: $8.00
+Medium: $10.00
+Large: $12.00
+- Each topping selected for the pizza incurs an additional cost of $1.50 per topping.
+Write a JavaScript function pizzaPricing, that takes the size of the pizza as a parameter in form of string and returns a curried function.
+The curried function should take an array of selected toppings as a parameter and return another function. The final function should take the quantity of pizzas as a parameter, calculate the total price and return the total price.
+Implement the pizzaPricing function and ensure that the returned function correctly calculates the total price based on the given parameters. 
+Expected Input
+
+Pizza = Large;
+Toppings = bacon , cheese
+Expected Output
+
+15
+
+Note:
+The final result should be up to 2 decimal places.
+function pricePricing(pizzaSize){
+    return function(toppings){
+        return function(pizzaQuantity){
+            const totalPrice = pizzaSize + toppings + pizzaQuantity;
+            return totalPrice;
+        }
+    }
+}
+
+  
+
+        -->
+        <script>
+            function pizzaPricing(size) {
+    // Define base prices for different sizes
+    let basePrice;
+    switch (size.toLowerCase()) {
+        case 'small':
+            basePrice = 8.00;
+            break;
+        case 'medium':
+            basePrice = 10.00;
+            break;
+        case 'large':
+            basePrice = 12.00;
+            break;
+        default:
+            throw new Error('Invalid pizza size');
+    }
+
+    // Return a curried function to calculate total price
+    return function (toppings) {
+        // Calculate topping cost based on the number of toppings
+        let toppingCost = toppings.length * 1.50;
+        
+        // Return a function to calculate total price based on quantity
+        return function (quantity) {
+            // Calculate total price including base price, topping cost, and quantity
+            let totalPrice = (basePrice + toppingCost) * quantity;
+            // Format total price to 2 decimal places
+            return totalPrice.toFixed(2);
+        };
+    };
+}
+
+// Example usage:
+const calculatePrice = pizzaPricing('Large')(['bacon', 'cheese']);
+console.log(calculatePrice(1)); // Output: 15.00
+        </script>
+    </body>
+</html>

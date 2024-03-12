@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Filter Function</title>
+    </head>
+    <body>
+        <script>
+            /*** Filter positive ****/
+            const inputs = [4, 10, 2, -3, -2, 5, 9, -1];
+            const positives = inputs.filter(noNegative);
+            function noNegative(num){
+                return num > 0;
+            }
+            console.log(`Original Array: ${inputs}`);
+            console.log(`Only Positive Number: ${positives}`);
+
+
+            console.log('/***********************/');
+
+            /*** Filter Negative *****/
+            const inputs2 = [4, 10, 2, -3, -2, 5, 9, -1];
+            const negatives = inputs2.filter(noPositive);
+            function noPositive(num){
+                return num < 0;
+            }
+            console.log(`Original Array: ${inputs2}`);
+            console.log(`Only Negative Number: ${negatives}`);
+        </script>
+    </body>
+</html>

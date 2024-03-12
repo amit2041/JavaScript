@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Rest Vs Spread Operator</title>
+    </head>
+    <body>
+        <script>
+            /*** Rest ***/
+            //Add student in given batch , single student add means this is a normal code
+            const aprilBatch = ['Tina', 'Madhur'];
+            const mayBatch = ['Ritik', 'Deepak', 'Shalini'];
+            const juneBatch = ['Saba', 'Shivani'];
+            const julyBatch = [];
+
+            function addStudent(batch, student){
+                batch.push(student);
+                console.log(batch);
+            }
+            addStudent(aprilBatch, 'Ritu');
+            addStudent(mayBatch, 'sunny');
+
+        </script>
+    </body>
+</html>

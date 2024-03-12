@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Built-in-classes or Built-in-objects</title>
+    </head>
+    <body>
+        <script>
+            //Date() Built-in-Object
+            const today = new Date();
+            console.log(today);
+
+            //day name and month name print by using Date-built-in-object
+            const birthDate = new Date('1996-06-12');
+            console.log(birthDate);
+
+            //day name and month name print by using Date-built-in-object without inverted comma
+            const someDay = new Date(1990,07);
+            console.log(someDay);
+            console.log(today.getFullYear());
+            console.log(typeof today.getFullYear());
+            //if we want only day, date, month and year print
+            console.log(today.toDateString());
+            // slice using in this code
+            const birthStr = birthDate.toString();
+            console.log(birthStr.slice(11, 17));
+        </script>
+    </body>
+</html>

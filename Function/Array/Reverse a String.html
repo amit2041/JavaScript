@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Reverse a String</title>
+    </head>
+    <body>
+        <!--
+            //Question
+            You have been given a string your task is to reverse and return the updated string
+Note
+Make the changes in the existing string you should not create a new string for storing the reverse of the string
+Expected Input
+"Hello"
+Expected Output
+"olleH"
+Test Cases
+Find the reverse of the given string 
+Return the updated string
+        -->
+        <script>
+           function reverseString(str){
+    // Convert the string to an array of characters
+    const strArray = str.split("");
+
+    // Get the length of the string
+    const length = strArray.length;
+
+    // Swap characters from the beginning and end of the array
+    for (let i = 0; i < Math.floor(length / 2); i++) {
+        // Swap characters using a temporary variable
+        const temp = strArray[i];
+        strArray[i] = strArray[length - 1 - i];
+        strArray[length - 1 - i] = temp;
+    }
+
+    // Join the array back into a string
+    const reversedString = strArray.join("");
+
+    // Return the updated string
+    return reversedString;
+    }
+    console.log(reverseString("Hello world"));
+    //Output : "olleH"
+        </script>
+    </body>
+</html>

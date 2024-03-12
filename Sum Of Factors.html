@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            Sum of factors
+        </title>
+    </head>
+    <body>
+        <!--
+            //Question
+            you have been provided with a number your task is to store the sum of its factors in the variable answer. A factor is a number that divides the given number without any remainder.
+
+Expected Input
+6
+Expected Output
+12
+Explanation
+The factor of 6 is 1,2,3,6 and their sum is 12
+Test Cases
+Find the factors of the given number
+Calculate the sum of factors
+Store the sum in the answer
+
+        -->
+        <script>
+            function sumOfFactors(number) {
+    let answer = 0;
+
+    // Iterate from 1 to the given number
+    for (let i = 1; i <= number; i++) {
+        // Check if 'i' is a factor of the given number
+        if (number % i === 0) {
+            // If 'i' is a factor, add it to the sum
+            answer += i;
+        }
+    }
+
+    return answer;
+}
+        </script>
+    </body>
+</html>

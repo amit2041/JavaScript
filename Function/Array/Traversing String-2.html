@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>To Find Perticular character how many time comes in given string</title>
+    </head>
+    <body>
+        <script>
+            let count = 0;
+            function countChar(str, ch){
+                for(let i = 0; i < str.length; i++){
+                    if(str.charAt(i) === ch){
+                        count++;
+                    }
+                }
+                console.log(`Occurrences of character ${ch} is : ${count}`);
+            }
+            let str = 'JavaScript is an amazing language.';
+            let charToFind = 'a'; // any character find put here
+            countChar(str, charToFind);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Object in Literals</title>
+    </head>
+    <body>
+        <script>
+            const movie = {title: "The Avengers",
+            year: 2012,
+            genre: "Action, Sci-fi, Thriller",
+            cast: ["Robert Downey Jr., Charis Evan"],
+            getDetails: function(){
+                console.log(`Title: ${movie.title}\nYear: ${movie.year}\nGenre: ${movie.genre}\nCast: ${movie.cast}`);
+            }}
+            console.log(movie.title);
+            movie.getDetails();
+
+            // Adding some more Property in this code
+            const movie2 = {title: "The Avengers",
+            year: 2012,
+            genre: "Action, Sci-fi, Thriller",
+            cast: {main_lead: 'Robert Downey Jr.',
+            others: 'Chris Evans',},
+            getDetails: function(){
+                console.log(`Title: ${movie2.title}\nYear: ${movie2.year}\nGenre: ${movie2.genre}\nCast: ${movie2.cast}`);
+            }}
+            console.log(movie2.cast.main_lead);
+
+        </script>
+    </body>
+</html>

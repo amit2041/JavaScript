@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Deep Copy</title>
+    </head>
+    <body>
+        <script>
+            const user1 = {
+                username: 'Sara',
+                age: 12,
+                marks: {
+                    maths: 20,
+                    eng: 25,
+                },
+
+                // changes only original object i mean user1 this is not affect user2 object because of user2 already taken deep copy
+            /*    getMarks(){
+                    console.log('this.marks');
+                } */
+            }
+            const user2 = JSON.parse(JSON.stringify(user1));
+            user2.username = 'Harry';
+            user2.marks.maths = 10;
+            console.log(user1);
+            console.log(user2);
+        </script>
+    </body>
+</html>

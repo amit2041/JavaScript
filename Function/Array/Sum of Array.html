@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Sum of Array</title>
+    </head>
+    <body>
+        <!--
+            //Question
+            You are tasked with creating a program that processes an array of positive integers. Your goal is to find the sum of all even numbers in the array, but you need to implement a special condition: if you encounter a number that is a multiple of 5, you should skip it and move on to the next element without including it in the sum.
+
+Expected Input
+[1,6,8,3,5,20,10]
+Expected Output
+14
+Test Cases
+Find all the even elements in the array
+Omit those elements which are divisible by 5
+Sum all the the elements which satisfy the given conditions
+Return the sum
+const sumEven = [];
+    for(let i of arr){
+        if(i % 2 !== 0){
+            continue;
+        }
+        sumEven.push(i);
+        if(i % 5 !== 0){
+            continue;
+        }
+    }
+    console.log(sumEven);
+      }
+
+        -->
+        <script>
+            function sumOfArray(arr) {
+    let sumEven = 0; // Changed from array to variable for sum
+
+    for (let i of arr) {
+        if (i % 2 === 0 && i%5 !==0) { // Check if the number is even
+        
+            sumEven += i; // Add even numbers to the sum
+        }
+    }
+
+    return sumEven; // Return the sum instead of logging it
+}
+
+// Test case
+const arr = [1, 6, 8, 3, 5, 20, 10];
+const result = sumOfArray(arr);
+console.log(result);
+        </script>
+    </body>
+</html>

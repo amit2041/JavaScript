@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>for..in loop</title>
+    </head>
+    <body>
+        <script>
+           // Print Students Name With Roll Number
+           const students = ['Tina', 'Raj', 'Bobby', 'Seema', 'Alex', 'Sita', 'Shyam'];
+
+           /*** For..in loop **/
+            for(let i in students){
+               // console.log(`Roll No ${i + 1}: ${students[i]}`); // this is provide wrong number series like 01, 11, 21, 31 because he is understand i is string
+               console.log(`Roll No ${Number(i) + 1}: ${students[i]}`);
+            }
+        </script>
+    </body>
+</html>

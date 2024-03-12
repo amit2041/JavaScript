@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Getter and Setter</title>
+    </head>
+    <body>
+        <script>
+            //simple code for converting radius to diameter
+        /*    class Circle{
+                constructor(radius){
+                    this.radius = radius;
+                }
+                getDiameter(){
+                    console.log(this.radius*2);
+                }
+            }
+            const circle = new Circle(4);
+            console.log(circle.radius);
+            circle.getDiameter();
+            */
+
+
+
+            //code for converting radius to diameter by using --> get
+        /*    class Circle{
+                constructor(radius){
+                    this.radius = radius;
+                }
+                //get
+                get Diameter(){
+                    return this.radius*2;
+                }
+            }
+            const circle = new Circle(4);
+            console.log(circle.radius);
+            console.log(circle.Diameter);
+            circle.radius = 6;
+            console.log(circle.Diameter);
+            */
+
+
+
+           /*  //code for converting radius to diameter and diameter to radius by using --> get and set
+            class Circle{
+                constructor(radius){
+                    this.radius = radius;
+                }
+                //get
+                get Diameter(){
+                    return this.radius*2;
+                }
+                //set
+                set Diameter(newDiameter){
+                    this.radius = newDiameter/2;
+                }
+            }
+            const circle = new Circle(4);
+            console.log(circle.radius);
+            console.log(circle.Diameter);
+            circle.radius = 6;
+            console.log(circle.Diameter);
+            circle.Diameter = 20;
+            console.log(circle.radius);
+            */
+
+
+            //code for converting radius to diameter and diameter to radius with validation by using --> get and set
+            class Circle{
+                constructor(radius){
+                    this.radius = radius;
+                }
+                //get
+                get Diameter(){
+                    return this.radius*2;
+                }
+                //set
+                set Diameter(newDiameter){
+                    if(newDiameter>=0){
+                        this.radius = newDiameter/2;
+                    }else{
+                        console.log('Invalid Input');
+                    }
+                }
+            }
+            const circle = new Circle(4);
+            console.log(circle.radius);
+            console.log(circle.Diameter);
+            circle.radius = 6;
+            console.log(circle.Diameter);
+            circle.Diameter = 20;
+            console.log(circle.radius);
+            circle.Diameter = -2;
+            console.log(circle.radius); // it is given previous output is 10
+
+        </script>
+    </body>
+</html>

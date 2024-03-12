@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Rest Operator</title>
+    </head>
+    <body>
+        <script>
+            /*** Rest ***/
+            //Add student in given batch , single student add means this is a normal code
+            const aprilBatch = ['Tina', 'Madhur'];
+            const mayBatch = ['Ritik', 'Deepak', 'Shalini'];
+            const juneBatch = ['Saba', 'Shivani'];
+            const julyBatch = [];
+
+            //Rest... Add student in given batch , multiple student add in particular batch at same time
+            function addStudent(batch, ...student){
+                for(let i of student){
+                    batch.push(i);
+                }
+                console.log(batch);
+            }
+
+            addStudent(aprilBatch, 'Sunny', 'Ritu', 'Sheena');
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Object Creatr</title>
+    </head>
+    <body>
+        <script>
+            const car = {
+                grtDetails(name){
+                    console.log(`Your car is ${name}`);
+                }
+            }
+            const car1 = Object.create(car);
+           // console.log(car1);
+           console.log(car1.__proto__);
+            car1.grtDetails('Audi');
+        </script>
+    </body>
+</html>

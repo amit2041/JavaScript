@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Object Destructing</title>
+    </head>
+    <body>
+        <script>
+            let user = {
+                name: 'Yahoo Baba',
+                age: 25,
+                city: 'Delhi'
+            };
+
+            let {name, age, city} = user;
+            console.log(name);
+            console.log(age);
+            console.log(city);
+
+            console.log('/*********************Assign with short name*******************/');
+
+            const userDetails = {
+                name: 'John Doe',
+                age: 26,
+                city: 'Mumbai'
+            }
+            const {name: n, age: a, city: c} = userDetails;
+            console.log(n);
+            console.log(a);
+            console.log(c);
+
+            console.log('/*********************Take only some Variables*******************/');
+
+            let userLogin = {
+                name1: 'Alice',
+                age1: 27,
+                city1: 'california'
+            }
+
+            let {name1, city1} = userLogin;
+            console.log(name1, city1);
+
+            console.log('/*********************Value Re-assign const to let*******************/');
+            const obj = {
+                a: 1,
+                b: 2,
+                c: ['O', 'B', 'J'],
+                d: {value: 'val'},
+            };
+
+            let b;
+            ({b:b} = obj);
+            console.log(b);
+
+        </script>
+    </body>
+</html>

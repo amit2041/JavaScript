@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Inheritance in Constructor Function</title>
+    </head>
+    <body>
+        <script>
+                //Constructor
+                function Vehicle(name, color, wheels){
+                    this.name = name;
+                    this.color = color;
+                    this.wheels = wheels;
+                }
+
+                // Methods
+                Vehicle.prototype.getVehDetails = function(){
+                    console.log(`Name: ${this.name}\nColor: ${this.color}\nWheels: ${this.wheels}`);
+                }
+
+                //another constructor
+                function Car(color, brand, seats){
+                    Vehicle.call(this, 'Car', 'Blue', 4);
+                    this.brand = brand;
+                    this.seats = seats;
+                }
+                // for accessing prototype of vehicle
+                Car.prototype = Object.create(Vehicle.prototype);
+                //methods
+                Car.prototype.getDetails = function(){
+                    console.log(`The ${this.color} ${this.name} is of ${this.brand} company. It ha seating for ${this.seats} people`);
+                }
+
+            // Object
+            const car1 = new Car('Black', 'Audi', 5);
+            car1.getDetails();
+          //  car1.getVehDetails();
+          console.log(car1);
+          car1.getVehDetails();
+          console.log(car1.__proto__);
+        </script>
+    </body>
+</html>

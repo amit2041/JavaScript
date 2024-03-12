@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Guess The Number Game</title>
+    </head>
+    <body>
+        <script>
+            let randomNum = Math.round(Math.random() * 100);
+            let guessedNum;
+            do{
+                guessedNum = prompt('Guess the number: ');
+                if(guessedNum == randomNum){
+                    console.log('Guessed Correctly!!');
+                }
+                else{
+                    console.log('Take another guess');
+                }
+            }while(guessedNum != randomNum);
+        </script>
+    </body>
+</html>

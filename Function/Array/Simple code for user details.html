@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Normal User Details</title>
+    </head>
+    <body>
+        <script>
+            var userName = 'Tom';
+            var userAge = 20;
+            console.log(`username: ${userName}`);
+            console.log(`userage: ${userAge}`);
+            
+            function greetUser(name){
+
+                var greet = 'I hope you are doing fine';
+                console.log(`Hello ${userName}, ${greet}`);
+                var currentYear = 2030;
+                const year = currentYear - userAge;
+                return `your birthyear is ${year}`;
+
+            }
+            const birthYear = greetUser(name);
+            console.log(birthYear);
+        </script>
+    </body>
+</html>

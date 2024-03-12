@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Composite Number</title>
+    </head>
+    <body>
+        <!--
+            //Question
+            Write a javascript program to check if a number is composite or not. A composite number is a natural number or a positive integer that has more than two factors.
+
+Expected Input
+20
+Expected Output
+true
+Expected Input
+13
+Expected Output
+false
+Test cases
+a-If the number is composite store true in the answer
+b-If the number is not composite store false in the answer
+break;
+
+        -->
+        <script>
+      /*      function Composite(number) {
+  let answer;
+  for(let i = 2; i<number; i++){
+      if(number % i == 0){
+          answer = true;
+          break;
+      }else{
+          answer = false;
+          break;
+      }
+  }
+return answer;
+}
+*/
+    //write code without using function
+    let answer;
+    let number = prompt('Enter Number');
+  for(let i = 2; i<number; i++){
+      if(number % i == 0){
+          answer = true;
+          break;
+      }else{
+          answer = false;
+          break;
+      }
+  }
+//console.log(answer);
+if(answer == true){
+    console.log('Composite Number');
+}else{
+    console.log('Not Composite Number');
+}
+        </script>
+    </body>
+</html>

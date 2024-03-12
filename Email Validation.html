@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Email Validation</title>
+    </head>
+    <body>
+        <!--
+            1.Length of the email > 11
+            2.after (.) only 3 character allowed
+            3.minimum 3 characters between @ and . (dot)
+        -->
+        <script>
+            const email = prompt("Enter email address");
+            const emailLength = email.length;
+            const lastIndex = emailLength - 1;
+            const atIndex = email.lastIndexOf('@');
+            const dotIndex = email.lastIndexOf('.');
+            if(emailLength < 11 || lastIndex - dotIndex < 2 || lastIndex - dotIndex > 3 || dotIndex - atIndex < 3){
+                console.log("Invalid Email");
+            }
+        </script>
+    </body>
+</html>

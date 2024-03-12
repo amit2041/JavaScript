@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Call, Apply, Bind Methods</title>
+    </head>
+    <body>
+        <script>
+            const car = {
+                name: 'car',
+                color: 'black',
+                getDetails(brand, seats){
+                    console.log(`This is a ${this.color} ${this.name} of ${brand} Company. It has ${seats} seats`);
+                },
+            };
+
+            const bus = {
+                name: 'bus',
+                color: 'blue',
+            };
+            car.getDetails('Audi', 5);
+            car.getDetails.call(bus, 'Star', 50); // call method
+            car.getDetails.apply(bus, ['Gold', 30]); // apply method
+            const veh1 = car.getDetails.bind(bus);
+            veh1('Silver', 30);
+            veh1('Bronze', 35);
+
+        </script>
+    </body>
+</html>

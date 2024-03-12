@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Pizz Pricing Practice</title>
+    </head>
+    <body>
+        <script>
+            function pizzaPricing(size){
+                let basePrice;
+                switch(size.toLowerCase()){
+                    case 'small':
+                        basePrice = 8.00;
+                        break;
+
+                        case 'medium':
+                        basePrice = 10.00;
+                        break;
+
+                        case 'large':
+                        basePrice = 12.00;
+                        break;
+
+                        default: throw new Error('Invalid pizza size');
+                }
+                return function(toppings){
+                    let toppingCost = toppings.length * 1.50;
+                    return function(quantity){
+                        let totalPrice = (basePrice + toppingCost) * quantity;
+                        return totalPrice.toFixed(2);
+                    }
+                }
+            }
+
+            const calculatePrice = pizzaPricing('Large')(['bacon', 'cheese']); // here quantity not pass in the parameter
+            console.log(calculatePrice(1)); // here 1 is quantity
+        </script>
+    </body>
+</html>

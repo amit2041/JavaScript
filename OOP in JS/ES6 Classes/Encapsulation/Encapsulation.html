@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Encapsulation</title>
+    </head>
+    <body>
+        <script>
+            class VehicleCl{
+                //Properties
+                name;
+                color;
+                wheels;
+
+                // Private Property
+                #regNumber;
+                //Constructor
+                constructor(name, color, wheels, number){
+                    this.name = name;
+                    this.color = color;
+                    this.wheels = wheels;
+                    this.#regNumber = number;
+                }
+
+                // Private method
+                #getNumber(number){
+                    return number;
+                }
+
+                // Methods
+                getDetails(){
+                    console.log(`The ${this.name} is ${this.color} in color. It has ${this.wheels} wheels. 
+                    Registration Number is: ${this.#getNumber(this.#regNumber)}`);
+                }
+
+            }
+
+            // Object
+            const veh1 = new VehicleCl('Scooter', 'grey', 2, 8866);
+            console.log(veh1);
+            console.log('/************************************/');
+          //  veh1.#regNumber = 2223; // not access outside of class
+           // console.log(veh1.#regNumber); // not access outside of class
+            veh1.getDetails();
+          //  veh1.#getNumber(); // not access outside of class
+        </script>
+    </body>
+</html>

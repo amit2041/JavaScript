@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>'this' of object</title>
+    </head>
+    <body>
+        <script>
+            // normal code 
+            const movie = {title: "The Avengers",
+            year: 2012,
+            genre: "Action, Sci-fi, Thriller",
+            cast: {main_lead: "Robert Downey Jr.,", others: "Charis Evan"},
+          /*  getDetails(){
+                console.log(`Title: ${movie.title}\nYear: ${movie.year}\nGenre: ${movie.genre}\nCast: ${movie.cast}`);
+
+            },
+        };
+            movie.getDetails(); */
+
+            //Using 'this' of object in the above code
+            getDetails(){
+                console.log(`Title: ${this.title}\nYear: ${this.year}\nGenre: ${this.genre}\nCast: ${this.cast}`);
+
+            },
+        };
+        movie.getDetails();
+        </script>
+    </body>
+</html>

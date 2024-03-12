@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        /**** Normal ****/
+
+        function add (a, b, c){
+            return a+b+c;
+        }
+        console.log(add(2, 3, 5));
+        
+        /****** Curring in JS *******/
+
+        function add2(a){
+            return function(b){
+                return function(c){
+                    return a+b+c;
+                }
+            }
+        }
+        console.log(add2(2)(3)(5));
+
+        /****** use any power number of given number by using curring like -> 2^5= 32, 5^3= 125 etc. ******/
+        function power(b){
+            return function(a){
+                return a ** b;
+            }
+        }
+        // for square
+        const square = power(2); // here 2 = b
+        console.log(square(5)); // here a = 5
+        console.log(square(6));
+
+        const cube = power(3);
+        console.log(cube(5));
+        console.log(cube(6));
+    </script>
+</body>
+</html>

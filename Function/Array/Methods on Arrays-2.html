@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>More Methods on Arrays</title>
+    </head>
+    <body>
+        <script>
+            /* Check the elements is present or not */
+            // indexOf()
+            const teams = ['KKR', 'CSK', 'RCB', 'MI'];
+            const RCBIndex = teams.indexOf('RCB');
+            console.log(RCBIndex); // if present return only index number
+
+            const GTIndex = teams.indexOf('GT');
+            console.log(GTIndex); // when element not present in array then return -1
+
+            //Check the elements is present or not if element present then return true if element not present return false
+            //includes()
+            const rcbIncludes = teams.includes('RCB');
+            console.log(rcbIncludes);
+
+            /** Slice() and Splice() is created shallow copy of array he is not effected original array**/
+            //slice() - delete elements in Array from staring of array elements if you provide 1 then delete one element from stating if yoy provide 2 then delete 2 elements
+            console.log(teams);
+            console.log(teams.slice(2)); // delete only 2 elements
+            console.log(teams); // show original Array because slice is not effected original array
+
+            // use -negative number in slice if we provide -1 then he gives me only last elements of Array
+            console.log(teams);
+            console.log(teams.slice(-1));
+            console.log(teams);
+
+            //splice() this method is used to add and remove elements at same time
+            console.log(teams);
+         //   teams.splice(2, 0, 'GT') // here 2 is index number, 0 is delete count, GT is insert the elements
+            console.log(teams);
+            teams.splice(2, 1, 'GT');
+            console.log(teams);
+
+         // Concat() merge two Arrays elements
+         const teams2 = ['India', 'Australia', 'New Zealand'];
+         const mergedTeam = teams.concat(teams2);
+         console.log(mergedTeam);       
+
+        </script>
+    </body>
+</html>

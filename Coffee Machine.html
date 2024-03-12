@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>
+            Coffee Machine
+        </title>
+    </head>
+    <body>
+        <script>
+            function coffeeMachine(coffeeType){
+                let answer;
+                // Convert the input to lowercase
+                coffeeType = coffeeType.toLowerCase();
+                // Use a switch statement to handle different coffee types
+                switch(coffeeType){
+                case 'regular' :answer = '$2.50';
+                break;
+
+                case 'latte' :answer = '$3.50';
+                break;
+
+                case 'cappuccino' :answer = '$4.00';
+                break;
+
+                case 'espresso':
+                answer = "$2.50";
+                break;
+            default:
+            answer = "Invalid coffee type";
+                }
+                return answer;
+            }
+        </script>
+    </body>
+</html>

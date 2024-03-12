@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Pure Function</title>
+    </head>
+    <body>
+        <script>
+            /**** Pure Function *****/
+            const calculate = function(num1, num2){
+                return num1 * num2;
+            }
+            console.log(calculate(5, 4));
+
+            /**** Impure Function ****/
+            
+            var discount = 25;
+            const calcDis = function(price){
+                discount = discount - 5;
+                return price - discount;
+            }
+            console.log(calcDis(100));
+        </script>
+    </body>
+</html>

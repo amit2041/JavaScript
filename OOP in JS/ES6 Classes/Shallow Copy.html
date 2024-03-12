@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Shallow Copy</title>
+    </head>
+    <body>
+        <script>
+            
+            const user1 = {
+                userName: 'Sara',
+                age: 12,
+            }
+            //Shallow Copy
+            const user2 = {...user1};
+            console.log(user1);
+            console.log(user2);
+
+            //create some changes in user2
+            user2.userName = 'Harry';
+            console.log(user2);
+            console.log(user1);
+
+/*******************************************************************************************************************/
+                        console.log('/*********************************************************/');
+                                /** New Code **/
+            //Create Shallow copy by using Object.assign
+
+            const user3 = {
+                userName: 'John',
+                age:25,
+            }
+            // create copy by object.assign
+            const user4 = Object.assign({}, user3);
+            console.log(user3);
+            console.log(user4);
+
+            //create some changes
+            user4.userName = 'Julee';
+            console.log(user4);
+            console.log(user3);
+
+  /********************************************************************************************************************/user1
+                                console.log('/*********************************************************/');
+                                    /** New Code **/
+
+                const user5 = {
+                userName: 'Jacky',
+                age:25,
+                marks: {
+                    maths: 20,
+                    eng: 25,
+                }
+            };
+            // create copy by object.assign
+            const user6 = Object.assign({}, user5);
+            console.log(user5);
+            console.log(user6);
+
+            //create some changes
+            user6.userName = 'Elina';
+            user6.marks.maths = 10;
+            console.log(user6);
+            console.log(user5);                 
+
+        </script>
+    </body>
+</html>

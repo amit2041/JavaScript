@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Discount Calculator 2</title>
+    </head>
+    <body>
+        //Question
+       /* You are developing an online shopping website, and you want to implement a discount system based on the total purchase amount. Write a JavaScript program using if statements and operators that calculate and display the total cost after applying a discount. The discount rules are as follows:
+
+a-If the total purchase amount is $100 or more, apply a 10% discount 
+b-If the total purchase amount is between $0 (inclusive) and $99.99 (inclusive), apply a 5% discount.
+Expected Input
+200
+Expected Output
+180
+Expected Input
+80
+Expected Output
+76
+Test Cases
+The final output has been printed correctly.
+
+a-If the amount is more than or equal to 100$, give a discount of 10% on the purchase amount and store the new amount in answer
+b-If the amount is less than 100$ and above or equal to 50$, give a discount of 5% on the purchase amount and store the new amount in answer.
+c- If the amount is less than 50$ than the customer is not eligible for any discount.
+.
+
+function discountCalculator(totalAmount) {
+    let answer;
+    let discount;
+    //Write your code below
+    if(totalAmount>=0 && totalAmount<=99.99){
+        discount = (totalAmount * 5) / 100;
+        answer = totalAmount - discount;
+        return answer
+    }
+    else if(totalAmount>=100){
+        discount = (totalAmount * 10) / 100;
+        answer = totalAmount - discount;
+        return answer
+    }
+
+}*/
+
+
+        <script>
+            function discountCalculator(totalAmount) {
+    let answer;
+    let discount;
+    //Write your code below
+    if(totalAmount>=0 && totalAmount<=99.99){
+        discount = (totalAmount * 5) / 100;
+        answer = totalAmount - discount;
+        return answer
+    }
+    else if(totalAmount>=100){
+        discount = (totalAmount * 10) / 100;
+        answer = totalAmount - discount;
+        return answer
+    }
+
+}
+
+        </script>
+    </body>
+</html>

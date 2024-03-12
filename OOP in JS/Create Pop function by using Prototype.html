@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Create Pop() function</title>
+    </head>
+    <body>
+        <script>
+            //here we create myPop() function, this is also similler to pop() function
+            const girl = ['apple', 'orange', 'grapes', 'junk food'];
+            Array.prototype.myPop = function(){
+                if(this.length ===0){
+                    return undefined;
+                }else{
+                    const lastIndex = this.length -1;
+                    const poppedElement = this[lastIndex];
+                    this.length = lastIndex;
+                    return poppedElement;
+                }
+            };
+            girl.myPop();
+            console.log(girl);
+        </script>
+    </body>
+</html>

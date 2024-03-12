@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Find 5 even number from starting by using Break Vs Continue</title>
+    </head>
+    <body>
+        <script>
+            // Continue
+            const inputs = [11, 32, 12, 45, 65, 94, 7, 78, 10, 100, 131, 67, 81, 72, 53];
+
+            const evenNumbers = []; //for storing even numbers in new Array
+            for(let i of inputs){
+                if(i % 2 !== 0){
+                    continue;
+                }
+                evenNumbers.push(i);
+                if(evenNumbers.length === 5){
+                    break;
+                }
+                console.log(evenNumbers); // here print only 4 even elements because condition is break before print 5th element
+            }
+            console.log(evenNumbers); // out of loop evenNumbers print 5 even elements
+        </script>
+    </body>
+</html>

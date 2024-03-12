@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Deleting Occurrences of an elements</title>
+    </head>
+    <body>
+        <!--
+            //Question
+            You have been provided with an array your task is to find
+             all the duplicate elements
+            and return them in form of an array
+
+Expected Input
+ [12,43,64,45,35,12,68,12]
+Expected Output
+[12]
+Test Cases
+Find the element that has more than one occurrence
+Store the new elements in a new array
+Return the new array
+
+        -->
+        <script>
+            // Assignment solution
+       /*     let arr = [4, 2, 34, 4, 1, 12, 1, 4];
+function findDuplicate(arr){
+//Implement your function here
+    const duplicates = [];
+    const seen = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        if (seen[arr[i]]) {
+            if (!duplicates.includes(arr[i])) {
+                duplicates.push(arr[i]);
+            }
+        } else {
+            seen[arr[i]] = 1;
+        }
+    }
+
+    return duplicates;
+}    
+console.log(findDuplicate(arr));*/
+
+function findDuplicates(arr) {
+    const duplicates = [];
+    const seen = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        if (seen[arr[i]]) {
+            if (!duplicates.includes(arr[i])) {
+                duplicates.push(arr[i]);
+            }
+        } else {
+            seen[arr[i]] = 1;
+        }
+    }
+
+    return duplicates;
+}
+
+// Test case
+const inputArray = [4, 2, 34, 4, 1, 12, 1, 4];
+const duplicateElements = findDuplicates(inputArray);
+console.log(duplicateElements);
+        </script>
+    </body>
+</html>
