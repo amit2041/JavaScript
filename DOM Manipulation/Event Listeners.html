@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Event Listener</title>
+    </head>
+    <body>
+        <p>Lets learn more about DOM Manipulation here.</p>
+        <script>
+            const p = document.querySelector('p');
+            p.addEventListener('click', function(){
+                ParaClick('Hello')
+            });
+
+            function ParaClick(name){
+                console.log(name + ' Para Clicked');
+            }
+        </script>
+    </body>
+</html>

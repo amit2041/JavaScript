@@ -1,0 +1,60 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Add styles for theme vector */
+#themeVector {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Add styles for slider */
+#volumeSlider {
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.card {
+  flex: 1;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlist {
+  flex: 1;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}

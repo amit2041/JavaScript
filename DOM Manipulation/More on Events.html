@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>More on Events</title>
+    </head>
+    <body>
+        <h1>Something!</h1>
+        <h2>Hello Everyone!</h2>
+        <p>Lets Learn more about DOM Manipulation here.</p>
+        <div>
+            DOM is a document object module
+        </div>
+        <script>
+            const btn = document.createElement('button');
+            btn.textContent = ('Click Here');
+            btn.className = 'btn1';
+
+            const division = document.querySelector('h2');
+            division.appendChild(btn);
+
+            // remove heading on the click of a button
+            btn.addEventListener('click', () =>
+                document.querySelector('h2').remove()
+            );
+
+            //Change background color by hovering mouse on paragraph
+            const p = document.querySelector('p');
+            p.addEventListener('mouseover', function(){
+                p.style.backgroundColor = 'yellow';
+            });
+
+            //add and remove background color by mousedown and mouseup on div tag
+            //mousedown
+            const div1 = document.querySelector('div'); 
+            div1.addEventListener('mousedown', function(){
+                div1.style.backgroundColor = 'pink';
+            });
+            //mouseup
+            div1.addEventListener('mouseup', function(){
+                div1.style.backgroundColor = '';
+            });
+
+
+            // press any key on the keyboard then show that keyword on console page
+            document.addEventListener('keydown', (event =>{
+                console.log('key pressed');
+                console.log(event.key);
+            }));
+            
+            // press any key on the keyboard then show that keyword code on console page
+            document.addEventListener('keydown', (event =>{
+                console.log('key pressed');
+                console.log(event.keyCode);
+            }));
+        </script>
+    </body>
+</html>

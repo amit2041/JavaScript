@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Removing Element & Event Listeners</title>
+    </head>
+    <body>
+        // Event Listeners click event
+        <h1 class="first1" onclick="alert('this is the first heading!')">Something</h1>
+
+        <p id="paragraph">Lets learn more about DOM Manipulation here...</p>
+        <div>
+            <h2>Heading-1</h2>
+        </div>
+        
+        <div>
+            <h2>Heading-2</h2>
+        </div>
+
+        <script>
+            document.querySelector('h2').remove();
+            
+            // Click event by DOM
+            const p = document.querySelector('p');
+            p.addEventListener('click', clickPara);
+
+            function clickPara(){
+                console.log('Para Clicked');
+            }
+
+        </script>
+    </body>
+</html>

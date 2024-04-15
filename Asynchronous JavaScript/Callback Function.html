@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>callback function in Asynchronous JS</title>
+    </head>
+    <body>
+
+
+        <script>
+            // code without using callback function in Asynchronous JS
+           /* function greet(){
+                setTimeout(()=>{
+                    console.log('hello');
+                }, 1000);
+            }
+
+            function message(){
+                console.log('welcome to the session!');
+            }
+
+            greet();
+            message();
+            */
+
+            // code with using callback function in Asynchronous JS
+
+            function greet(callback){
+                setTimeout(()=>{
+                    console.log('hello');
+                    callback();
+                }, 1000);
+            }
+
+            function message(){
+                console.log('welcome to the session!');
+            }
+
+            greet(message);
+        </script>
+    </body>
+</html>

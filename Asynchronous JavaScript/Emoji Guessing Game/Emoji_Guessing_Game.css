@@ -1,0 +1,66 @@
+/* Emoji_Guessing_Game.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+#description {
+    font-size: 3em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#guess-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+#result {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#score {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#timer {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}

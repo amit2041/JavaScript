@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Change Background Color Function</title>
+        <style>
+            body {
+    font-size: 20px;
+  }
+  .my-class {
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+  }
+  #my-id {
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+  }
+  button {
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+  } 
+        </style>
+    </head>
+    <body>
+        <!--
+            //Question
+            For the given HTML Page, create a function using JavaScript with the name changebackground color.
+
+Objective:
+
+The function should be able to take a selector as input and should be able to change the background color to yellow.
+
+Note:
+1. The selector can be anything, including class, ID, or tags.
+2. For a particular selector, if more than one element is present, change the color of each element.
+3. For eg: If more than one element has "myclass" as a class name change the background color of each element.
+;
+
+        -->
+
+        <h1>DOM Selector</h1>
+    <p>
+      Select elements using querySelector and change their background color to
+      yellow:
+    </p>
+    <div class="my-class">This is a div with class "my-class"</div>
+    <div class="my-class">This is another div with class "my-class"</div>
+    <div id="my-id">This is a div with id "my-id"</div>
+    <button>Click me</button>
+    <script>
+      // Call the function with different selectors to test it
+      changeBackgroundColor(".my-class");
+      changeBackgroundColor("#my-id");
+      changeBackgroundColor("button");
+
+      function changeBackgroundColor(selector){
+    //Implement your function here
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(element => {
+        element.style.backgroundColor = 'yellow';
+    });
+}
+    </script>
+
+        
+    </body>
+</html>

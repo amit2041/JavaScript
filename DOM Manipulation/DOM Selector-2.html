@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>DOM Selector-2</title>
+    </head>
+    <body>
+        <p id="para">lets learn more about DOM Manipulation here.</p>
+        <h1 class="head">Hello Everyone!</h1>
+        <script>
+            //select id by another way in DOM
+            console.log(document.getElementById('para'));
+            //select id by another way in DOM
+            console.log(document.getElementsByClassName('head'));
+            //we can change color of any object in script
+            const heading = document.querySelector('#para');
+            heading.style.color = 'red';
+             //we can change background color of any object in script
+             const head = document.querySelector('.head');
+             head.style.backgroundColor = 'grey';
+        </script>
+    </body>
+</html>

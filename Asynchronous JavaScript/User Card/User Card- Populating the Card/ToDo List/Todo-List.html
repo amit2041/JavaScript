@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo List</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .outer-container{
+        max-width: 600px;
+        min-height: 350px;
+        margin: 20px auto;
+        background-color: #cecccc;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .container {
+        max-width: 500px;
+        min-height: 100px;
+        margin: 20px auto;
+        background-color: #ffffffed;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    ul#todoList {
+        list-style-type: circle;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+        position: relative;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #todoInput{
+        font-size: 20px;
+        font-weight: bold;
+        margin: auto;
+        width: 92%;
+        min-height: 60px;
+        border-radius: 10px;
+        border-color: rgb(233, 232, 232);
+        background-color: rgb(236, 235, 235);
+        padding-left: 40px;
+        background-image: url('https://cdn.iconscout.com/icon/free/png-256/checkmark-2087393-1757847.png');
+        background-size: 20px;
+        background-position: 10px center;
+        background-repeat: no-repeat;
+    }
+
+    #todoInput::placeholder{
+        color: lightgrey;
+    }
+
+    hr{
+        height: 1px;
+        background-color: #dddddd;
+        border: none;
+    }
+
+    .filter-btn1 {
+        margin-top: 20px;
+        text-align: right;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .filter-btn1 button {
+        border: none;
+        background-color: #fcfbfb;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    .todo-item {
+        margin-left: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+
+    .todo-item span {
+        flex: 1;
+    }
+
+    .delete-btn {
+        display: none;
+        font-weight: bold;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    li:hover .delete-btn {
+        display: block;
+    }
+
+    .same-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .task-count {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .filter-btn {
+        margin-top: 20px;
+        text-align: right;
+    }
+
+    .filter-btn button {
+        border: none;
+        background-color: #fcfbfb;
+        padding: 5px 10px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    .filter-btn button:hover {
+        color: lightgrey; 
+    }
+
+</style>
+</head>
+<body>
+
+<div class="outer-container"> 
+<div class="container">
+    
+    <input type="text" id="todoInput" placeholder="&#xf0f6; Type your todo list">
+
+    <div class="filter-btn1">
+        
+        <button onclick="filterTasks1('complete all tasks')"><i class="fa fa-check-double"></i> Complete all tasks</button>
+        <button onclick="filterTasks1('clear completed')">Clear completed</button>
+        </div>
+    <hr>
+    
+    <ul id="todoList" style="list-style-type:circle;"></ul>
+    <hr>
+    <div class="same-line">
+        <div class="task-count" id="taskCount"></div>
+        <div class="filter-btn">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('uncompleted')">Uncompleted</button>
+            <button onclick="filterTasks('completed')">Completed</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    document.getElementById('todoInput').addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            addTodo();
+        }
+    });
+
+    function addTodo() {
+        const input = document.getElementById('todoInput');
+        const todoText = input.value.trim();
+        if (todoText === '') return;
+
+        const todoList = document.getElementById('todoList');
+        const li = document.createElement('li');
+        li.classList.add('todo-item');
+        li.innerHTML = `<span>${todoText}</span><button class="delete-btn" onclick="deleteTodo(this)">X</button>`;
+        todoList.appendChild(li);
+
+        updateTaskCount();
+        input.value = '';
+    }
+
+    function deleteTodo(btn) {
+        const li = btn.parentElement;
+        li.remove();
+        updateTaskCount();
+    }
+
+    function updateTaskCount() {
+        const taskCount = document.getElementById('taskCount');
+        const todoList = document.getElementById('todoList');
+        const todos = todoList.querySelectorAll('li').length;
+        taskCount.textContent = `${todos} tasks left`;
+    }
+
+    function filterTasks(status) {
+        const todoList = document.getElementById('todoList');
+        const todos = todoList.querySelectorAll('li');
+
+        todos.forEach(todo => {
+            switch (status) {
+                case 'completed':
+                    todo.style.display = todo.classList.contains('completed') ? 'block' : 'none';
+                    break;
+                case 'uncompleted':
+                    todo.style.display = !todo.classList.contains('completed') ? 'block' : 'none';
+                    break;
+                default:
+                    todo.style.display = 'block';
+                    break;
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

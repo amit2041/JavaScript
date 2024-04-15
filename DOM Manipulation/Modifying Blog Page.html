@@ -1,0 +1,229 @@
+<html>
+    <head>
+        <title>Modifying Blog Page</title>
+    </head>
+    <body>
+        <!--
+            //Question
+            For the Blog Page, we built in the previous topic and modified it to add move up, move down,
+            and delete functionality using an event listener.
+
+Objective:
+
+The dom structure of the project is as shown in the figure:
+
+
+
+
+For your convenience, the post part has already been added. Your task is to add event listeners to the buttons.
+
+For that:-
+
+1. Creates a new div element with the class "blog-buttons".
+2. Create a new button element with the class "blog-button" and "move-up" and append it to the "blog-buttons" div.
+3. Create a new button element with the class "blog-button" and "move-down" and append it to the "blog-buttons" div.
+4. Create a new button element with the class "blog-button" and "delete" and append it to the "blog-buttons" div.
+5. Append the "blog-buttons" to "newbox" element
+6. Add event listener to the "move-up", "move-down" and "delete" button
+7. The move-up button should be able to move the blog item one step up in the "bloglist".
+8. The move-down button should be able to move the blog item one step down in the "bloglist".
+9. The delete button should be able to delete that particular blog from the dom element.
+
+Expected Output:
+
+
+
+Hint:
+Use the onClick event to add the event listener.
+Use insertBefore to append at a specific position.
+        -->
+
+        <div id="header">
+            <h1>My Blogs</h1>
+            </div>
+            <ul class="blog-list"></ul>
+
+    <style>
+        #header{
+    width: 100%;
+    height: 100px;
+    background-color: #04f2f2;
+    justify-content: baseline;
+    text-align: center;
+    padding-top: 1%;
+    margin: 0;
+}
+body{
+    background-color: #00ffff;
+    margin: 0px;
+}
+.blog-list {
+list-style: none;
+margin: 40;
+padding: 40;
+background-color: #f0f8ff;
+}
+
+.blog-post {
+border-bottom: 1px solid #ccc;
+padding: 10px;
+display: flex;
+flex-direction: column;
+flex: 9 1;
+}
+
+.blog-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.blog-title {
+font-size: 30px;
+margin: 0;
+}
+.blog-buttons{
+display: flex;
+flex-direction: column;
+text-decoration: none;
+}
+.blog-button{
+        background-color: antiquewhite;
+}
+
+.blog-button{
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  /* box-shadow: rgba(44, 187, 99, .2) 0 -5px 8px -4px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px; */
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  /* padding: 7px 20p; */
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 15px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 2px;
+}
+
+.blog-button:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.blog-date {
+margin: 0;
+font-weight: bold;
+}
+.blog-box{
+        display: flex;
+        flex-direction: row;
+        flex-flow:wrap ;
+        
+}
+
+.blog-content {
+margin: 0;
+line-height: 1.5;
+}
+
+    </style>
+        <script>
+            function addBlog(blog) {
+    const blogList = document.querySelector('.blog-list');
+
+    const newBox = document.createElement('div');
+    newBox.classList.add('blog-box');
+
+    const newBlogPost = document.createElement('div');
+    newBlogPost.classList.add('blog-post');
+    newBox.appendChild(newBlogPost);
+
+    const newBlogHeader = document.createElement('div');
+    newBlogHeader.classList.add('blog-header');
+    newBlogPost.appendChild(newBlogHeader);
+
+    const newBlogTitle = document.createElement('h2');
+    newBlogTitle.classList.add('blog-title');
+    newBlogTitle.textContent = blog.title;
+    newBlogHeader.appendChild(newBlogTitle);
+
+    const newBlogDate = document.createElement('p');
+    newBlogDate.classList.add('blog-date');
+    newBlogDate.textContent = blog.date;
+    newBlogHeader.appendChild(newBlogDate);
+
+    const newBlogContent = document.createElement('p');
+    newBlogContent.classList.add('blog-content');
+    newBlogContent.textContent = blog.content;
+    newBlogPost.appendChild(newBlogContent);
+
+    // create a new div with className blog-buttons and append it to newBox
+    const blogButtons = document.createElement('div');
+    blogButtons.classList.add('blog-buttons');
+    newBox.appendChild(blogButtons);
+
+    // Create moveup button with class blog-button and move-up
+    const moveUpButton = document.createElement('button');
+    moveUpButton.classList.add('blog-button', 'move-up');
+    moveUpButton.textContent = 'Move Up';
+    moveUpButton.addEventListener('click', () => {
+        const prevSibling = newBox.previousElementSibling;
+        if (prevSibling) {
+            blogList.insertBefore(newBox, prevSibling);
+        }
+    });
+    blogButtons.appendChild(moveUpButton);
+
+    // Create movedown button with class blog-button and move-down
+    const moveDownButton = document.createElement('button');
+    moveDownButton.classList.add('blog-button', 'move-down');
+    moveDownButton.textContent = 'Move Down';
+    moveDownButton.addEventListener('click', () => {
+        const nextSibling = newBox.nextElementSibling;
+        if (nextSibling) {
+            blogList.insertBefore(nextSibling, newBox);
+        }
+    });
+    blogButtons.appendChild(moveDownButton);
+
+    // Create delete button with class blog-button and delete
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('blog-button', 'delete');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', () => {
+        newBox.remove();
+    });
+    blogButtons.appendChild(deleteButton);
+
+    blogList.appendChild(newBox);
+}
+
+const blogData = [
+    {
+        title: 'First Blog Post',
+        date: 'January 1, 2022',
+        content: 'This is the content of the first blog post.'
+    },
+    {
+        title: 'Second Blog Post',
+        date: 'February 1, 2022',
+        content: 'This is the content of the second blog post.'
+    },
+    {
+        title: 'Third Blog Post',
+        date: 'March 1, 2022',
+        content: 'This is the content of the third blog post.'
+    }
+];
+
+blogData.forEach(blog => addBlog(blog)); // Automatically call the function for each blog in the array
+        </script>
+    </body>
+</html>
